@@ -1,0 +1,8 @@
+//5.a)
+SELECT u.username AS "user", t.total_price AS "total transaksi" FROM transaction t
+JOIN users u ON t.user_id = u.id
+
+//5.b)
+SELECT p.product_name, tp.quantity FROM transaction_product tp
+JOIN product p ON tp.product_id = p.id
+ORDER BY quantity DESC

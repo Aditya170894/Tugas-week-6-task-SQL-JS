@@ -1,0 +1,33 @@
+CREATE TABLE users (
+	id int NOT NULL AUTO_INCREMENT,
+    username varchar(20),
+    password varchar(15),
+    created_at date NOT NULL,
+    updated_at date NOT NULL,
+    CONSTRAINT PK_users PRIMARY KEY (id)
+)
+
+CREATE TABLE product (
+	id int NOT NULL AUTO_INCREMENT,
+    product_name varchar(20) NOT NULL,
+    price int NOT NULL,
+    created_at date NOT NULL,
+    updated_at date NOT NULL,
+    CONSTRAINT PK_product PRIMARY KEY (id)
+)
+
+CREATE TABLE transaction_product (
+	transaction_id int NOT NULL AUTO_INCREMENT,
+    product_id int NOT NULL,
+    quantity int NOT NULL,
+    CONSTRAINT PK_transaction_product PRIMARY KEY (transaction_id)
+)
+
+CREATE TABLE transaction (
+	id int NOT NULL AUTO_INCREMENT,
+    user_id int NOT NULL,
+    total_price int NOT NULL,
+    created_at date NOT NULL,
+    updated_at date NOT NULL,
+    CONSTRAINT PK_transaction PRIMARY KEY (id)
+)
